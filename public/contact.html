@@ -36,47 +36,65 @@
         <h1 data-i18n="contact_title">Tell us your vision and we will design the growth path.</h1>
       </section>
 
-      <section class="section form-wrap">
-        <form id="contact-form" novalidate>
-          <label for="name" data-i18n="form_name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100" />
+      <section class="section split-layout contact-layout">
+        <div class="form-wrap">
+          <form id="contact-form" novalidate>
+            <label for="name" data-i18n="form_name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100" />
 
-          <label for="email" data-i18n="form_email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
+            <label for="email" data-i18n="form_email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
 
-          <label for="company" data-i18n="form_company">Company (optional)</label>
-          <input id="company" name="company" type="text" autocomplete="organization" maxlength="120" />
+            <label for="company" data-i18n="form_company">Company (optional)</label>
+            <input id="company" name="company" type="text" autocomplete="organization" maxlength="120" />
 
-          <label for="service" data-i18n="form_service">Service</label>
-          <select id="service" name="service" required>
-            <option value="" data-i18n="form_select">Please choose</option>
-            <option value="webentwicklung" data-i18n="form_service_web">Web Development</option>
-            <option value="seo">SEO</option>
-            <option value="social-media" data-i18n="form_service_social">Social Media Management</option>
-            <option value="full-service" data-i18n="form_service_full">Full Service</option>
-          </select>
+            <label for="service" data-i18n="form_service">Service</label>
+            <select id="service" name="service" required>
+              <option value="" data-i18n="form_select">Please choose</option>
+              <option value="webentwicklung" data-i18n="form_service_web">Web Development</option>
+              <option value="seo">SEO</option>
+              <option value="social-media" data-i18n="form_service_social">Social Media Management</option>
+              <option value="full-service" data-i18n="form_service_full">Full Service</option>
+            </select>
 
-          <label for="message" data-i18n="form_message">Project goals</label>
-          <textarea id="message" name="message" required minlength="20" maxlength="2000"></textarea>
+            <label for="message" data-i18n="form_message">Project goals</label>
+            <textarea id="message" name="message" required minlength="20" maxlength="2000"></textarea>
 
-          <input
-            type="text"
-            name="website"
-            id="website"
-            class="honeypot"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
+            <input
+              type="text"
+              name="website"
+              id="website"
+              class="honeypot"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+
+            <button type="submit" class="btn btn-primary" data-i18n="form_submit">Send secure request</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <aside class="visual-card visual-tall">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+            alt="Beratungsgespräch im Team"
+            data-i18n-alt="contact_visual_alt"
+            loading="lazy"
           />
-
-          <button type="submit" class="btn btn-primary" data-i18n="form_submit">Send secure request</button>
-          <p id="form-status" role="status" aria-live="polite"></p>
-        </form>
+          <div class="visual-overlay">
+            <p class="tag" data-i18n="contact_visual_tag">Response in 24h</p>
+            <h2 data-i18n="contact_visual_title">Wir melden uns schnell mit klaren nächsten Schritten.</h2>
+          </div>
+        </aside>
       </section>
     </main>
 
     <footer class="site-footer">
       <p data-i18n="footer_text">Nova Reach Studio. Built for brands that want to lead.</p>
+      <nav class="legal-nav" aria-label="Legal">
+        <a href="/privacy" data-i18n="footer_privacy">Datenschutz</a>
+        <a href="/imprint" data-i18n="footer_imprint">Impressum</a>
+      </nav>
     </footer>
 
     <script src="/main.js" defer></script>

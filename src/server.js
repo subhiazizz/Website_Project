@@ -16,7 +16,11 @@ const pageRoutes = {
   "/about": "about.html",
   "/services": "services.html",
   "/process": "process.html",
-  "/contact": "contact.html"
+  "/contact": "contact.html",
+  "/privacy": "privacy.html",
+  "/datenschutz": "privacy.html",
+  "/imprint": "imprint.html",
+  "/impressum": "imprint.html"
 };
 
 applySecurity(app, env);

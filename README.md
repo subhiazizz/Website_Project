@@ -90,6 +90,19 @@ Beispiel-Payload:
 - HPP-Schutz gegen HTTP Parameter Pollution
 - Stacktraces nur ausserhalb von Production
 
+## Datenschutz und Cookies (DSGVO-Basis)
+
+- Cookie-Consent-Banner mit aktiver Einwilligung fuer optionale Kategorien (Analyse, Marketing)
+- Voreinstellung: nur notwendige Technologien
+- Einstellungen jederzeit ueber "Cookie-Einstellungen" anpassbar
+- Rechtliche Seiten integriert:
+	- `/privacy` und `/datenschutz`
+	- `/imprint` und `/impressum`
+
+Wichtiger Hinweis:
+- Die Inhalte in Datenschutz und Impressum enthalten Musterdaten und muessen vor Live-Betrieb mit echten Unternehmensdaten ersetzt werden.
+- Diese Implementierung bildet eine technische DSGVO-Basis und ersetzt keine rechtliche Beratung.
+
 ## Hinweise zur Weiterentwicklung
 
 - Kontakt-Route aktuell mit Platzhalter-Verarbeitung (Konsole)
