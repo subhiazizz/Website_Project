@@ -5,199 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Bilingual full-service marketing agency for web development, SEO and social media management."
+      content="Nova Reach Studio ist eine Full-Service Marketingagentur fuer Webentwicklung, SEO und Social Media Management."
     />
-    <title>Nova Reach Studio | Growth by Design</title>
+    <title>Nova Reach Studio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700;800&family=Syne:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Manrope:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
-    <div class="aurora aurora-a" aria-hidden="true"></div>
-    <div class="aurora aurora-b" aria-hidden="true"></div>
-    <div class="grid-overlay" aria-hidden="true"></div>
-
+  <body data-title-key="title_home">
+    <div class="backdrop" aria-hidden="true"></div>
     <header class="site-header">
-      <a href="#top" class="logo">Nova Reach Studio</a>
-      <nav aria-label="Main navigation">
-        <a href="#services" data-i18n="nav_services">Services</a>
-        <a href="#work" data-i18n="nav_work">Work</a>
-        <a href="#process" data-i18n="nav_process">Process</a>
-        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="/" class="logo">Nova Reach Studio</a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="/" data-nav="home" data-i18n="nav_home">Home</a>
+        <a href="/about" data-nav="about" data-i18n="nav_about">About</a>
+        <a href="/services" data-nav="services" data-i18n="nav_services">Services</a>
+        <a href="/process" data-nav="process" data-i18n="nav_process">Process</a>
+        <a href="/contact" data-nav="contact" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="lang-switch" role="group" aria-label="Language switcher">
-        <button type="button" class="lang-btn active" data-lang="de">DE</button>
+        <button type="button" class="lang-btn" data-lang="de">DE</button>
         <button type="button" class="lang-btn" data-lang="en">EN</button>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero reveal">
-        <p class="eyebrow" data-i18n="hero_eyebrow">Growth Agency for Bold Brands</p>
-        <h1 data-i18n="hero_title">We build digital presence that turns attention into revenue.</h1>
-        <p class="hero-copy" data-i18n="hero_copy">
-          Von high-performance Websites bis SEO-Skalierung und Social Storytelling auf Instagram und TikTok: wir bauen
-          ein System, das Reichweite, Leads und nachhaltiges Wachstum liefert.
+    <main>
+      <section class="hero section">
+        <p class="eyebrow" data-i18n="home_eyebrow">Full-Service Marketing Agency</p>
+        <h1 data-i18n="home_title">Beautiful digital products that make brands unforgettable.</h1>
+        <p class="lead" data-i18n="home_copy">
+          We create premium websites, build sustainable SEO visibility and scale social media systems for measurable
+          growth.
         </p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary" data-i18n="hero_cta_primary">Start your project</a>
-          <a href="#work" class="btn btn-secondary" data-i18n="hero_cta_secondary">See case stories</a>
-        </div>
-
-        <div class="hero-badges">
-          <span>SEO + Content Engine</span>
-          <span>Conversion Focused UX</span>
-          <span>Social Media Velocity</span>
+        <div class="actions">
+          <a class="btn btn-primary" href="/contact" data-i18n="home_cta_primary">Start a project</a>
+          <a class="btn btn-ghost" href="/services" data-i18n="home_cta_secondary">Explore services</a>
         </div>
       </section>
 
-      <section class="ticker" aria-label="Brand promise">
-        <p>
-          <span data-i18n="ticker_1">Creative strategy</span>
-          <span>•</span>
-          <span data-i18n="ticker_2">Technical execution</span>
-          <span>•</span>
-          <span data-i18n="ticker_3">Measured growth</span>
-          <span>•</span>
-          <span data-i18n="ticker_1">Creative strategy</span>
-          <span>•</span>
-          <span data-i18n="ticker_2">Technical execution</span>
-          <span>•</span>
-          <span data-i18n="ticker_3">Measured growth</span>
-        </p>
+      <section class="section card-grid">
+        <article class="glass-card">
+          <h2 data-i18n="home_card_1_title">Web Development</h2>
+          <p data-i18n="home_card_1_body">Performance-first websites designed to convert visitors into customers.</p>
+        </article>
+        <article class="glass-card">
+          <h2 data-i18n="home_card_2_title">SEO</h2>
+          <p data-i18n="home_card_2_body">Technical precision and content strategy that keep your brand discoverable.</p>
+        </article>
+        <article class="glass-card">
+          <h2 data-i18n="home_card_3_title">Social Media</h2>
+          <p data-i18n="home_card_3_body">Narratives for Instagram and TikTok that move culture and drive leads.</p>
+        </article>
       </section>
 
-      <section id="services" class="panel reveal stagger">
-        <h2 data-i18n="services_title">What we execute for your growth</h2>
-        <div class="service-grid">
-          <article>
-            <h3 data-i18n="service_web_title">Web Development</h3>
-            <p data-i18n="service_web_body">
-              Conversion-ready websites with premium UI, clean architecture and fast loading for measurable business
-              impact.
-            </p>
-          </article>
-          <article>
-            <h3 data-i18n="service_seo_title">SEO</h3>
-            <p data-i18n="service_seo_body">
-              Technical SEO, search-intent content and structured on-page optimization to win high-value rankings.
-            </p>
-          </article>
-          <article>
-            <h3 data-i18n="service_social_title">Social Media Management</h3>
-            <p data-i18n="service_social_body">
-              Content systems for Instagram and TikTok that strengthen your brand and create a reliable lead pipeline.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="work" class="work reveal stagger">
-        <div class="work-head">
-          <h2 data-i18n="work_title">Case-story style execution</h2>
-          <p data-i18n="work_copy">
-            Wir inszenieren deine Marke digital so, dass sie professionell wirkt, klar positioniert ist und im Markt
-            sichtbar bleibt.
-          </p>
-        </div>
-        <div class="work-grid">
-          <article>
-            <p class="tag">E-Commerce</p>
-            <h3>GlowThread</h3>
-            <p data-i18n="work_1">Neue Website + SEO Cluster: +187% organischer Umsatz in 8 Monaten.</p>
-          </article>
-          <article>
-            <p class="tag">B2B SaaS</p>
-            <h3>SignalFlow</h3>
-            <p data-i18n="work_2">Relaunch + Funnel UX: 3.9x mehr Demo-Bookings aus identischem Traffic.</p>
-          </article>
-          <article>
-            <p class="tag">Lifestyle Brand</p>
-            <h3>Vera Form</h3>
-            <p data-i18n="work_3">TikTok/Instagram Framework: +420k Reach und stabile Lead-Qualitaet.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="process" class="split reveal stagger">
+      <section class="section metric-band" aria-label="Results">
         <div>
-          <h2 data-i18n="process_title">Data over guesswork</h2>
-          <p data-i18n="process_copy">
-            Jede Entscheidung basiert auf KPIs, Search- und Behavioral-Daten. So optimieren wir nicht nur Design,
-            sondern echte Business-Performance.
-          </p>
+          <strong>+220%</strong>
+          <span data-i18n="metric_1">average organic growth in 12 months</span>
         </div>
-        <ol>
-          <li data-i18n="process_1">Strategy sprint, positioning and measurable growth goals</li>
-          <li data-i18n="process_2">Build phase: website, SEO framework and social content engine</li>
-          <li data-i18n="process_3">Weekly optimization loops, testing and scale-up</li>
-        </ol>
-      </section>
-
-      <section class="stats reveal stagger" aria-label="Results">
-        <article>
-          <span>+220%</span>
-          <p data-i18n="stat_1">average organic growth within 12 months</p>
-        </article>
-        <article>
-          <span>4.6x</span>
-          <p data-i18n="stat_2">more qualified leads with integrated funnels</p>
-        </article>
-        <article>
-          <span>95%</span>
-          <p data-i18n="stat_3">of projects delivered on schedule</p>
-        </article>
-      </section>
-
-      <section id="contact" class="contact reveal">
         <div>
-          <h2 data-i18n="contact_title">Tell us what growth looks like for you</h2>
-          <p data-i18n="contact_copy">
-            In a focused first call, we map your status quo, define priorities and build the fastest path to results.
-          </p>
+          <strong>4.6x</strong>
+          <span data-i18n="metric_2">more qualified leads through integrated funnels</span>
         </div>
-
-        <form id="contact-form" novalidate>
-          <label for="name" data-i18n="form_name">Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="100" />
-
-          <label for="email" data-i18n="form_email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
-
-          <label for="company" data-i18n="form_company">Company (optional)</label>
-          <input id="company" name="company" type="text" autocomplete="organization" maxlength="120" />
-
-          <label for="service" data-i18n="form_service">Service</label>
-          <select id="service" name="service" required>
-            <option value="" data-i18n="form_select">Please choose</option>
-            <option value="webentwicklung" data-i18n="form_service_web">Web Development</option>
-            <option value="seo">SEO</option>
-            <option value="social-media" data-i18n="form_service_social">Social Media Management</option>
-            <option value="full-service" data-i18n="form_service_full">Full Service</option>
-          </select>
-
-          <label for="message" data-i18n="form_message">Project goals</label>
-          <textarea id="message" name="message" required minlength="20" maxlength="2000"></textarea>
-
-          <input
-            type="text"
-            name="website"
-            id="website"
-            class="honeypot"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
-          />
-
-          <button type="submit" class="btn btn-primary" data-i18n="form_submit">Send secure request</button>
-          <p id="form-status" role="status" aria-live="polite"></p>
-        </form>
+        <div>
+          <strong>95%</strong>
+          <span data-i18n="metric_3">on-time project delivery rate</span>
+        </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footer_text">Nova Reach Studio. Built for brands that want to lead.</p>
+    </footer>
 
     <script src="/main.js" defer></script>
   </body>

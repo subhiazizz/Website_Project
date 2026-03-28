@@ -4,47 +4,60 @@ const languageButtons = document.querySelectorAll(".lang-btn");
 
 const i18n = {
   de: {
+    title_home: "Nova Reach Studio | Start",
+    title_about: "Nova Reach Studio | About",
+    title_services: "Nova Reach Studio | Leistungen",
+    title_process: "Nova Reach Studio | Vorgehen",
+    title_contact: "Nova Reach Studio | Kontakt",
+    nav_home: "Home",
+    nav_about: "About",
     nav_services: "Leistungen",
-    nav_work: "Arbeiten",
     nav_process: "Vorgehen",
     nav_contact: "Kontakt",
-    hero_eyebrow: "Growth-Agentur fuer starke Marken",
-    hero_title: "Wir bauen digitale Praesenz, die Aufmerksamkeit in Umsatz verwandelt.",
-    hero_copy:
-      "Von High-Performance-Websites bis SEO-Skalierung und Social Storytelling auf Instagram und TikTok: wir bauen ein System fuer Reichweite, Leads und nachhaltiges Wachstum.",
-    hero_cta_primary: "Projekt starten",
-    hero_cta_secondary: "Case Stories ansehen",
-    ticker_1: "Kreative Strategie",
-    ticker_2: "Technische Umsetzung",
-    ticker_3: "Messbares Wachstum",
-    services_title: "Was wir fuer dein Wachstum umsetzen",
+    home_eyebrow: "Full-Service Marketingagentur",
+    home_title: "Schoene digitale Produkte, die Marken unvergesslich machen.",
+    home_copy:
+      "Wir entwickeln Premium-Websites, skalieren SEO-Sichtbarkeit und bauen Social-Media-Systeme fuer messbares Wachstum.",
+    home_cta_primary: "Projekt starten",
+    home_cta_secondary: "Leistungen entdecken",
+    home_card_1_title: "Webentwicklung",
+    home_card_1_body: "Performance-first Websites, die Besucher in Kunden verwandeln.",
+    home_card_2_title: "SEO",
+    home_card_2_body: "Technische Praezision und Content-Strategie fuer langfristige Sichtbarkeit.",
+    home_card_3_title: "Social Media",
+    home_card_3_body: "Erzaehlformate fuer Instagram und TikTok, die Aufmerksamkeit in Leads umwandeln.",
+    metric_1: "durchschnittliches organisches Wachstum in 12 Monaten",
+    metric_2: "mehr qualifizierte Leads durch integrierte Funnels",
+    metric_3: "Projektlieferung im Zeitplan",
+    about_eyebrow: "About us",
+    about_title: "Wir verbinden Design, Strategie und Engineering zu einem Growth-System.",
+    about_copy:
+      "Nova Reach Studio hilft Unternehmen, einpraegsame digitale Erlebnisse zu schaffen und langfristige Sichtbarkeit aufzubauen.",
+    about_block_1_title: "Unsere Philosophie",
+    about_block_1_body:
+      "Grosses Marketing beginnt mit Klarheit. Wir bauen Systeme, die Brand Voice, technische Exzellenz und messbaren Business-Impact verbinden.",
+    about_block_2_title: "Was uns anders macht",
+    about_block_2_body:
+      "Wir kombinieren Premium-Design mit harten Performance-Daten. Jeder Launch ist schoen und zugleich accountable.",
+    services_eyebrow: "Leistungen",
+    services_title: "High-End-Umsetzung fuer Web, Search und Social.",
     service_web_title: "Webentwicklung",
-    service_web_body:
-      "Conversion-orientierte Websites mit Premium-UI, sauberer Architektur und hoher Geschwindigkeit fuer messbaren Business-Impact.",
+    service_web_body: "Moderne, schnelle und conversion-orientierte Websites fuer deinen Markt.",
     service_seo_title: "SEO",
-    service_seo_body:
-      "Technisches SEO, suchintentionbasierter Content und strukturierte On-Page-Optimierung fuer hochwertige Rankings.",
+    service_seo_body: "Technisches SEO und Content-Architektur fuer dauerhafte Rankings.",
     service_social_title: "Social Media Management",
     service_social_body:
-      "Content-Systeme fuer Instagram und TikTok, die Markenwirkung steigern und eine verlaessliche Lead-Pipeline aufbauen.",
-    work_title: "Umsetzung mit Case-Story-Ansatz",
-    work_copy:
-      "Wir inszenieren deine Marke digital so, dass sie professionell wirkt, klar positioniert ist und im Markt sichtbar bleibt.",
-    work_1: "Neue Website + SEO Cluster: +187% organischer Umsatz in 8 Monaten.",
-    work_2: "Relaunch + Funnel UX: 3.9x mehr Demo-Bookings bei gleichem Traffic.",
-    work_3: "TikTok/Instagram Framework: +420k Reach und stabile Lead-Qualitaet.",
-    process_title: "Daten statt Bauchgefuehl",
-    process_copy:
-      "Jede Entscheidung basiert auf KPIs, Search- und Behavioral-Daten. So optimieren wir nicht nur Design, sondern echte Business-Performance.",
-    process_1: "Strategie-Sprint, Positionierung und messbare Wachstumsziele",
-    process_2: "Build-Phase: Website, SEO-Framework und Social Content Engine",
-    process_3: "Woechentliche Optimierung, Testing und Skalierung",
-    stat_1: "durchschnittliches organisches Wachstum in 12 Monaten",
-    stat_2: "mehr qualifizierte Leads durch integrierte Funnels",
-    stat_3: "der Projekte werden im Zeitplan geliefert",
-    contact_title: "Erzaehl uns, wie Wachstum fuer dich aussieht",
-    contact_copy:
-      "In einem fokussierten Erstgespraech analysieren wir deinen Status quo, setzen Prioritaeten und definieren den schnellsten Weg zu Ergebnissen.",
+      "Kreative Systeme fuer Instagram und TikTok, die Reichweite, Vertrauen und Leads steigern.",
+    process_eyebrow: "Vorgehen",
+    process_title: "Ein klares System von Strategie bis Skalierung.",
+    process_step_1_title: "Strategie-Sprint",
+    process_step_1_body: "Positionierung, Zielgruppen-Mapping und KPI-Setup fuer echte Wachstumsziele.",
+    process_step_2_title: "Build und Launch",
+    process_step_2_body: "Website, SEO-Stack und Content-Systeme als integrierte Plattform.",
+    process_step_3_title: "Optimieren und Skalieren",
+    process_step_3_body: "Woechentliche Tests und Iterationen auf Basis von Funnel-, Search- und Engagement-Daten.",
+    contact_eyebrow: "Kontakt",
+    contact_title: "Erzaehl uns deine Vision, wir designen den Wachstumspfad.",
     form_name: "Name",
     form_email: "E-Mail",
     form_company: "Unternehmen (optional)",
@@ -55,54 +68,66 @@ const i18n = {
     form_service_full: "Full Service",
     form_message: "Projektziele",
     form_submit: "Sichere Anfrage senden",
+    footer_text: "Nova Reach Studio. Gebaut fuer Marken, die fuehren wollen.",
     status_sending: "Anfrage wird sicher uebermittelt...",
     status_short_message: "Bitte beschreibe dein Projekt genauer (mindestens 20 Zeichen).",
     status_failed: "Die Anfrage konnte nicht gesendet werden.",
-    status_success: "Vielen Dank! Wir melden uns in Kuerze.",
-    page_title: "Nova Reach Studio | Wachstum durch Design"
+    status_success: "Vielen Dank. Wir melden uns in Kuerze."
   },
   en: {
+    title_home: "Nova Reach Studio | Home",
+    title_about: "Nova Reach Studio | About",
+    title_services: "Nova Reach Studio | Services",
+    title_process: "Nova Reach Studio | Process",
+    title_contact: "Nova Reach Studio | Contact",
+    nav_home: "Home",
+    nav_about: "About",
     nav_services: "Services",
-    nav_work: "Work",
     nav_process: "Process",
     nav_contact: "Contact",
-    hero_eyebrow: "Growth Agency for Bold Brands",
-    hero_title: "We build digital presence that turns attention into revenue.",
-    hero_copy:
-      "From high-performance websites to SEO scale and social storytelling on Instagram and TikTok, we build one engine for reach, leads and sustainable growth.",
-    hero_cta_primary: "Start your project",
-    hero_cta_secondary: "See case stories",
-    ticker_1: "Creative strategy",
-    ticker_2: "Technical execution",
-    ticker_3: "Measured growth",
-    services_title: "What we execute for your growth",
+    home_eyebrow: "Full-Service Marketing Agency",
+    home_title: "Beautiful digital products that make brands unforgettable.",
+    home_copy:
+      "We create premium websites, build sustainable SEO visibility and scale social media systems for measurable growth.",
+    home_cta_primary: "Start a project",
+    home_cta_secondary: "Explore services",
+    home_card_1_title: "Web Development",
+    home_card_1_body: "Performance-first websites designed to convert visitors into customers.",
+    home_card_2_title: "SEO",
+    home_card_2_body: "Technical precision and content strategy that keep your brand discoverable.",
+    home_card_3_title: "Social Media",
+    home_card_3_body: "Narratives for Instagram and TikTok that move culture and drive leads.",
+    metric_1: "average organic growth in 12 months",
+    metric_2: "more qualified leads through integrated funnels",
+    metric_3: "on-time project delivery rate",
+    about_eyebrow: "About us",
+    about_title: "We blend design, strategy and engineering into one growth system.",
+    about_copy:
+      "Nova Reach Studio helps companies create memorable digital experiences and build long-term visibility.",
+    about_block_1_title: "Our philosophy",
+    about_block_1_body:
+      "Great marketing starts with clarity. We build systems that align brand voice, technical excellence and measurable business impact.",
+    about_block_2_title: "What makes us different",
+    about_block_2_body:
+      "We combine premium design with hard performance data. Every launch is beautiful and accountable.",
+    services_eyebrow: "Services",
+    services_title: "High-end execution across web, search and social.",
     service_web_title: "Web Development",
-    service_web_body:
-      "Conversion-ready websites with premium UI, clean architecture and fast loading for measurable business impact.",
+    service_web_body: "Modern, fast and conversion-driven websites tailored to your market.",
     service_seo_title: "SEO",
-    service_seo_body:
-      "Technical SEO, search-intent content and structured on-page optimization to win high-value rankings.",
+    service_seo_body: "Technical SEO and content architecture built for durable rankings.",
     service_social_title: "Social Media Management",
-    service_social_body:
-      "Content systems for Instagram and TikTok that strengthen your brand and create a reliable lead pipeline.",
-    work_title: "Case-story style execution",
-    work_copy:
-      "We shape your digital presence so your brand looks premium, stays clearly positioned and wins market attention.",
-    work_1: "New website + SEO clusters: +187% organic revenue in 8 months.",
-    work_2: "Relaunch + funnel UX: 3.9x more demo bookings from the same traffic.",
-    work_3: "TikTok/Instagram framework: +420k reach and stable lead quality.",
-    process_title: "Data over guesswork",
-    process_copy:
-      "Every decision is guided by KPI, search and behavioral data. We optimize not only design, but real business outcomes.",
-    process_1: "Strategy sprint, positioning and measurable growth goals",
-    process_2: "Build phase: website, SEO framework and social content engine",
-    process_3: "Weekly optimization loops, testing and scale-up",
-    stat_1: "average organic growth within 12 months",
-    stat_2: "more qualified leads with integrated funnels",
-    stat_3: "of projects delivered on schedule",
-    contact_title: "Tell us what growth looks like for you",
-    contact_copy:
-      "In a focused first call, we map your current state, define priorities and build the fastest path to results.",
+    service_social_body: "Creative systems for Instagram and TikTok that grow audience and trust.",
+    process_eyebrow: "Process",
+    process_title: "A clear system from strategy to measurable scale.",
+    process_step_1_title: "Strategy Sprint",
+    process_step_1_body: "Positioning, audience mapping and KPI setup to define real growth targets.",
+    process_step_2_title: "Build and Launch",
+    process_step_2_body: "Website, SEO stack and content systems rolled out as one integrated platform.",
+    process_step_3_title: "Optimize and Scale",
+    process_step_3_body: "Weekly testing and iteration based on funnel, search and engagement data.",
+    contact_eyebrow: "Contact",
+    contact_title: "Tell us your vision and we will design the growth path.",
     form_name: "Name",
     form_email: "Email",
     form_company: "Company (optional)",
@@ -113,18 +138,24 @@ const i18n = {
     form_service_full: "Full Service",
     form_message: "Project goals",
     form_submit: "Send secure request",
+    footer_text: "Nova Reach Studio. Built for brands that want to lead.",
     status_sending: "Sending your secure request...",
     status_short_message: "Please describe your project in more detail (at least 20 characters).",
     status_failed: "Your request could not be sent.",
-    status_success: "Thank you. We will get back to you shortly.",
-    page_title: "Nova Reach Studio | Growth by Design"
+    status_success: "Thank you. We will get back to you shortly."
   }
 };
+
+function updateActiveNav() {
+  const currentPath = window.location.pathname === "/" ? "home" : window.location.pathname.replace("/", "");
+  document.querySelectorAll("[data-nav]").forEach((link) => {
+    link.classList.toggle("active", link.dataset.nav === currentPath);
+  });
+}
 
 function applyLanguage(lang) {
   const selected = i18n[lang] ? lang : "de";
   document.documentElement.lang = selected;
-  document.title = i18n[selected].page_title;
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const key = node.dataset.i18n;
@@ -132,6 +163,11 @@ function applyLanguage(lang) {
       node.textContent = i18n[selected][key];
     }
   });
+
+  const titleKey = document.body?.dataset?.titleKey;
+  if (titleKey && i18n[selected][titleKey]) {
+    document.title = i18n[selected][titleKey];
+  }
 
   languageButtons.forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.lang === selected);
@@ -146,6 +182,7 @@ languageButtons.forEach((button) => {
   });
 });
 
+updateActiveNav();
 const savedLanguage = localStorage.getItem("siteLanguage") || "de";
 applyLanguage(savedLanguage);
 

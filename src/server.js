@@ -11,6 +11,13 @@ const contactRoutes = require("./routes/contactRoutes");
 
 const app = express();
 const publicDir = path.resolve(__dirname, "..", "public");
+const pageRoutes = {
+  "/": "index.html",
+  "/about": "about.html",
+  "/services": "services.html",
+  "/process": "process.html",
+  "/contact": "contact.html"
+};
 
 applySecurity(app, env);
 
@@ -31,7 +38,14 @@ app.get("*", (req, res) => {
     return notFoundHandler(req, res);
   }
 
-  return res.sendFile(path.join(publicDir, "index.html"));
+  const normalizedPath = req.path.replace(/\/+$/, "") || "/";
+  const pageFile = pageRoutes[normalizedPath];
+
+  if (pageFile) {
+    return res.sendFile(path.join(publicDir, pageFile));
+  }
+
+  return notFoundHandler(req, res);
 });
 
 app.use(notFoundHandler);

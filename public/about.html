@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="About Nova Reach Studio." />
+    <title>Nova Reach Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Manrope:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-title-key="title_about">
+    <div class="backdrop" aria-hidden="true"></div>
+    <header class="site-header">
+      <a href="/" class="logo">Nova Reach Studio</a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="/" data-nav="home" data-i18n="nav_home">Home</a>
+        <a href="/about" data-nav="about" data-i18n="nav_about">About</a>
+        <a href="/services" data-nav="services" data-i18n="nav_services">Services</a>
+        <a href="/process" data-nav="process" data-i18n="nav_process">Process</a>
+        <a href="/contact" data-nav="contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language switcher">
+        <button type="button" class="lang-btn" data-lang="de">DE</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero section">
+        <p class="eyebrow" data-i18n="about_eyebrow">About us</p>
+        <h1 data-i18n="about_title">We blend design, strategy and engineering into one growth system.</h1>
+        <p class="lead" data-i18n="about_copy">
+          Nova Reach Studio helps companies create memorable digital experiences and build long-term visibility.
+        </p>
+      </section>
+
+      <section class="section split-layout">
+        <article class="elevated">
+          <h2 data-i18n="about_block_1_title">Our philosophy</h2>
+          <p data-i18n="about_block_1_body">
+            Great marketing starts with clarity. We build systems that align brand voice, technical excellence and
+            measurable business impact.
+          </p>
+        </article>
+        <article class="elevated">
+          <h2 data-i18n="about_block_2_title">What makes us different</h2>
+          <p data-i18n="about_block_2_body">
+            We combine premium design with hard performance data. Every launch is beautiful and accountable.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footer_text">Nova Reach Studio. Built for brands that want to lead.</p>
+    </footer>
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>
