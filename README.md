@@ -103,6 +103,20 @@ Wichtiger Hinweis:
 - Die Inhalte in Datenschutz und Impressum enthalten Musterdaten und muessen vor Live-Betrieb mit echten Unternehmensdaten ersetzt werden.
 - Diese Implementierung bildet eine technische DSGVO-Basis und ersetzt keine rechtliche Beratung.
 
+## SEO-Basis (Google)
+
+- SEO-optimierte Meta-Titles und Meta-Descriptions pro Seite
+- Canonical-Tags und Robots-Meta-Tags gesetzt
+- Dynamische `robots.txt` unter `/robots.txt`
+- Dynamische `sitemap.xml` unter `/sitemap.xml`
+- Leistungsseite um FAQ-Inhalte erweitert (relevante Suchanfragen wie Website-Entwicklung und SEO)
+
+Empfohlene naechste Schritte:
+- Domain in der Google Search Console verifizieren
+- Sitemap in der Search Console einreichen
+- Fuer zentrale Keywords eigene Landingpages erstellen (z. B. `/webseite-entwickeln-lassen`)
+- Kontinuierlich Content mit Suchintention ausbauen (Cases, Branchen, FAQs)
+
 ## Hinweise zur Weiterentwicklung
 
 - Kontakt-Route aktuell mit Platzhalter-Verarbeitung (Konsole)

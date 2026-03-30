@@ -2,14 +2,16 @@ const form = document.getElementById("contact-form");
 const statusNode = document.getElementById("form-status");
 const languageButtons = document.querySelectorAll(".lang-btn");
 const COOKIE_CONSENT_KEY = "cookieConsent";
+const COOKIE_CONSENT_VERSION = 1;
+const THEME_KEY = "siteTheme";
 
 const i18n = {
   de: {
-    title_home: "Nova Reach Studio | Start",
-    title_about: "Nova Reach Studio | Über uns",
-    title_services: "Nova Reach Studio | Leistungen",
-    title_process: "Nova Reach Studio | Vorgehen",
-    title_contact: "Nova Reach Studio | Kontakt",
+    title_home: "Webseite entwickeln lassen | Nova Reach Studio",
+    title_about: "Über uns | Agentur für Webentwicklung & SEO",
+    title_services: "Leistungen: Webentwicklung, SEO, Social Media",
+    title_process: "Unser Prozess | Website entwickeln & SEO skalieren",
+    title_contact: "Kontakt | Anfrage für Webentwicklung & SEO",
     title_privacy: "Nova Reach Studio | Datenschutz",
     title_imprint: "Nova Reach Studio | Impressum",
     nav_home: "Home",
@@ -18,9 +20,9 @@ const i18n = {
     nav_process: "Vorgehen",
     nav_contact: "Kontakt",
     home_eyebrow: "Full-Service Marketingagentur",
-    home_title: "Schöne digitale Produkte, die Marken unvergesslich machen.",
+    home_title: "Webseite entwickeln lassen: modern, schnell und sichtbar bei Google.",
     home_copy:
-      "Wir entwickeln Premium-Websites, skalieren SEO-Sichtbarkeit und bauen Social-Media-Systeme für messbares Wachstum.",
+      "Wir entwickeln Premium-Websites für Unternehmen, verbessern deine Google-Rankings mit SEO und bauen Social-Media-Systeme für messbares Wachstum.",
     home_cta_primary: "Projekt starten",
     home_cta_secondary: "Leistungen entdecken",
     home_visual_tag_1: "Growth Architecture",
@@ -52,7 +54,7 @@ const i18n = {
       "Interdisziplinäre Teams, schnelle Feedback-Loops und klare Verantwortung bringen Projekte zuverlässig von Insight zu Impact.",
     about_visual_alt: "Kreativteam im Marken-Workshop",
     services_eyebrow: "Leistungen",
-    services_title: "High-End-Umsetzung für Web, Search und Social.",
+    services_title: "Webentwicklung, SEO und Social Media aus einer Agentur.",
     service_web_title: "Webentwicklung",
     service_web_body: "Moderne, schnelle und conversion-orientierte Websites für deinen Markt.",
     service_seo_title: "SEO",
@@ -60,6 +62,16 @@ const i18n = {
     service_social_title: "Social Media Management",
     service_social_body:
       "Kreative Systeme für Instagram und TikTok, die Reichweite, Vertrauen und Leads steigern.",
+    services_faq_title: "FAQ zur Website-Entwicklung und SEO",
+    services_faq_q1: "Wie lange dauert es, eine professionelle Website entwickeln zu lassen?",
+    services_faq_a1:
+      "Je nach Umfang dauert ein Projekt in der Regel 4 bis 10 Wochen. Wir arbeiten in klaren Sprints mit transparenten Meilensteinen.",
+    services_faq_q2: "Kann meine neue Website direkt für Google optimiert werden?",
+    services_faq_a2:
+      "Ja. Technisches SEO, Seitenstruktur, Ladezeit und Content-Grundlagen werden direkt beim Build integriert.",
+    services_faq_q3: "Für welche Unternehmen ist eure SEO-Strategie geeignet?",
+    services_faq_a3:
+      "Für lokale Dienstleister, B2B-Unternehmen und wachsende Marken, die planbar mehr qualifizierte Anfragen möchten.",
     services_visual_alt_1: "Website-Interface auf mehreren Displays",
     services_visual_alt_2: "SEO- und Analyse-Dashboard",
     services_visual_alt_3: "Planung von Social-Media-Kampagnen",
@@ -145,17 +157,19 @@ const i18n = {
     cookie_marketing_title: "Marketing",
     cookie_marketing_desc: "Ermöglicht Kampagnen-Messung und personalisierte Inhalte.",
     cookie_open_settings: "Cookie-Einstellungen",
+    theme_to_dark: "Dark",
+    theme_to_light: "Light",
     status_sending: "Anfrage wird sicher übermittelt...",
     status_short_message: "Bitte beschreibe dein Projekt genauer (mindestens 20 Zeichen).",
     status_failed: "Die Anfrage konnte nicht gesendet werden.",
     status_success: "Vielen Dank. Wir melden uns in Kürze."
   },
   en: {
-    title_home: "Nova Reach Studio | Home",
-    title_about: "Nova Reach Studio | About",
-    title_services: "Nova Reach Studio | Services",
-    title_process: "Nova Reach Studio | Process",
-    title_contact: "Nova Reach Studio | Contact",
+    title_home: "Website Development Agency | Nova Reach Studio",
+    title_about: "About | Web Development & SEO Agency",
+    title_services: "Services: Web Development, SEO, Social Media",
+    title_process: "Our Process | Build Websites and Scale SEO",
+    title_contact: "Contact | Request Web Development & SEO",
     title_privacy: "Nova Reach Studio | Privacy",
     title_imprint: "Nova Reach Studio | Imprint",
     nav_home: "Home",
@@ -164,9 +178,9 @@ const i18n = {
     nav_process: "Process",
     nav_contact: "Contact",
     home_eyebrow: "Full-Service Marketing Agency",
-    home_title: "Beautiful digital products that make brands unforgettable.",
+    home_title: "Website development that is modern, fast and discoverable on Google.",
     home_copy:
-      "We create premium websites, build sustainable SEO visibility and scale social media systems for measurable growth.",
+      "We build premium websites for companies, improve Google visibility with SEO and scale social media systems for measurable growth.",
     home_cta_primary: "Start a project",
     home_cta_secondary: "Explore services",
     home_visual_tag_1: "Growth Architecture",
@@ -198,13 +212,23 @@ const i18n = {
       "Interdisciplinary teams, rapid feedback loops and clear ownership keep projects moving from insight to impact.",
     about_visual_alt: "Creative team in a brand workshop",
     services_eyebrow: "Services",
-    services_title: "High-end execution across web, search and social.",
+    services_title: "Web development, SEO and social media in one system.",
     service_web_title: "Web Development",
     service_web_body: "Modern, fast and conversion-driven websites tailored to your market.",
     service_seo_title: "SEO",
     service_seo_body: "Technical SEO and content architecture built for durable rankings.",
     service_social_title: "Social Media Management",
     service_social_body: "Creative systems for Instagram and TikTok that grow audience and trust.",
+    services_faq_title: "FAQ about website development and SEO",
+    services_faq_q1: "How long does professional website development usually take?",
+    services_faq_a1:
+      "Depending on scope, most projects take 4 to 10 weeks. We work in clear sprints with transparent milestones.",
+    services_faq_q2: "Can my new website be SEO-ready from day one?",
+    services_faq_a2:
+      "Yes. Technical SEO, information architecture, page speed and content foundations are integrated during build.",
+    services_faq_q3: "What type of companies benefit most from your SEO strategy?",
+    services_faq_a3:
+      "Local service businesses, B2B teams and growth-stage brands that want more qualified inbound leads.",
     services_visual_alt_1: "Website interface on multiple displays",
     services_visual_alt_2: "SEO and analytics dashboard",
     services_visual_alt_3: "Planning social media campaigns",
@@ -290,6 +314,8 @@ const i18n = {
     cookie_marketing_title: "Marketing",
     cookie_marketing_desc: "Enables campaign measurement and personalized content.",
     cookie_open_settings: "Cookie settings",
+    theme_to_dark: "Dark",
+    theme_to_light: "Light",
     status_sending: "Sending your secure request...",
     status_short_message: "Please describe your project in more detail (at least 20 characters).",
     status_failed: "Your request could not be sent.",
@@ -339,6 +365,55 @@ function applyLanguage(lang) {
   });
 
   localStorage.setItem("siteLanguage", selected);
+  updateThemeToggleLabel();
+}
+
+function getStoredTheme() {
+  const storedTheme = localStorage.getItem(THEME_KEY);
+  if (storedTheme === "dark") {
+    return "dark";
+  }
+
+  return "light";
+}
+
+function applyTheme(theme) {
+  const normalizedTheme = theme === "dark" ? "dark" : "light";
+  document.documentElement.dataset.theme = normalizedTheme;
+  localStorage.setItem(THEME_KEY, normalizedTheme);
+  updateThemeToggleLabel();
+}
+
+function updateThemeToggleLabel() {
+  const toggleButton = document.querySelector("[data-theme-toggle]");
+  if (!toggleButton) {
+    return;
+  }
+
+  const lang = document.documentElement.lang === "en" ? "en" : "de";
+  const isDark = document.documentElement.dataset.theme === "dark";
+  const i18nKey = isDark ? "theme_to_light" : "theme_to_dark";
+  toggleButton.textContent = i18n[lang][i18nKey] || (isDark ? "Light" : "Dark");
+  toggleButton.setAttribute("aria-label", toggleButton.textContent);
+}
+
+function createThemeToggle() {
+  const header = document.querySelector(".site-header");
+  if (!header || document.querySelector("[data-theme-toggle]")) {
+    return;
+  }
+
+  const toggleButton = document.createElement("button");
+  toggleButton.type = "button";
+  toggleButton.className = "theme-btn";
+  toggleButton.setAttribute("data-theme-toggle", "true");
+
+  toggleButton.addEventListener("click", () => {
+    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    applyTheme(nextTheme);
+  });
+
+  header.appendChild(toggleButton);
 }
 
 function getStoredConsent() {
@@ -350,6 +425,10 @@ function getStoredConsent() {
 
     const parsed = JSON.parse(raw);
     if (typeof parsed !== "object" || parsed === null) {
+      return null;
+    }
+
+    if (parsed.version !== COOKIE_CONSENT_VERSION || parsed.choiceMade !== true) {
       return null;
     }
 
@@ -412,7 +491,14 @@ function applyConsent(consent) {
 }
 
 function persistConsent(consent) {
-  localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
+  localStorage.setItem(
+    COOKIE_CONSENT_KEY,
+    JSON.stringify({
+      ...consent,
+      choiceMade: true,
+      version: COOKIE_CONSENT_VERSION
+    })
+  );
   applyConsent(consent);
 }
 
@@ -474,6 +560,7 @@ function createCookieBanner() {
     openSettingsButton.hidden = false;
     applyConsent(storedConsent);
   } else {
+    cookieBanner.hidden = false;
     openSettingsButton.hidden = true;
     applyConsent({ necessary: true, analytics: false, marketing: false, timestamp: null });
   }
@@ -538,6 +625,8 @@ languageButtons.forEach((button) => {
 });
 
 updateActiveNav();
+createThemeToggle();
+applyTheme(getStoredTheme());
 createCookieBanner();
 const savedLanguage = localStorage.getItem("siteLanguage") || "de";
 applyLanguage(savedLanguage);

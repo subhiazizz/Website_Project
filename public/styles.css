@@ -8,6 +8,36 @@
   --accent: #1d6fff;
   --accent-soft: #e8f0ff;
   --shadow: 0 20px 50px rgba(17, 49, 117, 0.12);
+  --page-grad-start: #fcfdff;
+  --page-grad-end: #f3f7ff;
+  --backdrop-one: rgba(29, 111, 255, 0.14);
+  --backdrop-two: rgba(104, 194, 255, 0.16);
+  --header-bg: rgba(252, 253, 255, 0.86);
+  --header-border: rgba(216, 226, 242, 0.8);
+  --card-grad-start: rgba(255, 255, 255, 0.95);
+  --card-grad-end: rgba(244, 248, 255, 0.95);
+  --cookie-bg: rgba(255, 255, 255, 0.97);
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b1422;
+  --surface: #111f34;
+  --surface-soft: #192b44;
+  --ink: #e8f0ff;
+  --ink-muted: #b3c2dd;
+  --line: #29405f;
+  --accent: #69a4ff;
+  --accent-soft: #1b3353;
+  --shadow: 0 20px 50px rgba(1, 7, 18, 0.45);
+  --page-grad-start: #0b1422;
+  --page-grad-end: #0f1b2f;
+  --backdrop-one: rgba(47, 124, 255, 0.22);
+  --backdrop-two: rgba(86, 198, 255, 0.2);
+  --header-bg: rgba(11, 20, 34, 0.88);
+  --header-border: rgba(41, 64, 95, 0.86);
+  --card-grad-start: rgba(17, 31, 52, 0.95);
+  --card-grad-end: rgba(21, 39, 63, 0.95);
+  --cookie-bg: rgba(12, 22, 38, 0.96);
 }
 
 * {
@@ -22,7 +52,7 @@ body {
 
 body {
   font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
-  background: linear-gradient(180deg, #fcfdff 0%, #f3f7ff 100%);
+  background: linear-gradient(180deg, var(--page-grad-start) 0%, var(--page-grad-end) 100%);
   color: var(--ink);
   line-height: 1.55;
 }
@@ -33,8 +63,8 @@ body {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 15% 8%, rgba(29, 111, 255, 0.14), transparent 36%),
-    radial-gradient(circle at 85% 4%, rgba(104, 194, 255, 0.16), transparent 38%);
+    radial-gradient(circle at 15% 8%, var(--backdrop-one), transparent 36%),
+    radial-gradient(circle at 85% 4%, var(--backdrop-two), transparent 38%);
 }
 
 h1,
@@ -62,9 +92,24 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(252, 253, 255, 0.86);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(216, 226, 242, 0.8);
+  border-bottom: 1px solid var(--header-border);
+}
+
+.theme-btn {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 0.35rem 0.72rem;
+  cursor: pointer;
+}
+
+.theme-btn:hover {
+  background: var(--accent-soft);
 }
 
 .logo {
@@ -278,7 +323,7 @@ h1 {
 .elevated,
 .step-item,
 .form-wrap {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(244, 248, 255, 0.95));
+  background: linear-gradient(160deg, var(--card-grad-start), var(--card-grad-end));
   border: 1px solid var(--line);
   border-radius: 20px;
   box-shadow: var(--shadow);
@@ -428,17 +473,17 @@ textarea:focus {
 
 .cookie-banner {
   position: fixed;
-  left: 50%;
+  right: 1rem;
   bottom: 1rem;
-  transform: translateX(-50%);
-  width: min(960px, calc(100% - 1.6rem));
-  border-radius: 18px;
+  transform: none;
+  width: min(440px, calc(100% - 1.6rem));
+  border-radius: 14px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.97);
+  background: var(--cookie-bg);
   box-shadow: 0 24px 52px rgba(13, 26, 51, 0.2);
   backdrop-filter: blur(12px);
   z-index: 60;
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 .cookie-banner[hidden] {
@@ -448,22 +493,23 @@ textarea:focus {
 .cookie-copy {
   margin: 0;
   color: var(--ink-muted);
-  max-width: 72ch;
+  max-width: 56ch;
+  font-size: 0.9rem;
 }
 
 .cookie-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
-  margin-top: 0.9rem;
+  gap: 0.5rem;
+  margin-top: 0.65rem;
 }
 
 .cookie-settings {
-  margin-top: 0.85rem;
-  padding-top: 0.85rem;
+  margin-top: 0.65rem;
+  padding-top: 0.65rem;
   border-top: 1px solid var(--line);
   display: grid;
-  gap: 0.7rem;
+  gap: 0.55rem;
 }
 
 .cookie-toggle {
@@ -471,7 +517,7 @@ textarea:focus {
   justify-content: space-between;
   gap: 0.9rem;
   align-items: center;
-  padding: 0.66rem 0.7rem;
+  padding: 0.52rem 0.6rem;
   border-radius: 12px;
   background: var(--surface-soft);
   color: var(--ink);
@@ -481,7 +527,7 @@ textarea:focus {
 .cookie-toggle p {
   margin: 0;
   color: var(--ink-muted);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 500;
 }
 
@@ -534,6 +580,8 @@ textarea:focus {
 
   .cookie-banner {
     bottom: 0.65rem;
+    right: 0.8rem;
     padding: 0.85rem;
+    width: min(420px, calc(100% - 1.2rem));
   }
 }
