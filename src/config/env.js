@@ -8,6 +8,7 @@ const schema = Joi.object({
   PORT: Joi.number().port().default(3000),
   TRUST_PROXY: Joi.string().valid("true", "false").default("false"),
   ALLOWED_ORIGINS: Joi.string().default("http://localhost:3000,http://127.0.0.1:3000"),
+  PUBLIC_URL: Joi.string().uri({ scheme: ["http", "https"] }).default("http://localhost:3000"),
   CONTACT_RECEIVER_EMAIL: Joi.string().email().allow("").optional()
 }).unknown(true);
 
@@ -26,5 +27,6 @@ module.exports = {
   port: value.PORT,
   trustProxy: value.TRUST_PROXY === "true",
   allowedOrigins,
+  publicUrl: value.PUBLIC_URL.replace(/\/$/, ""),
   contactReceiverEmail: value.CONTACT_RECEIVER_EMAIL || ""
 };
