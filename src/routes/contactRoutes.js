@@ -15,8 +15,7 @@ router.post("/", contactLimiter, contactValidation, handleValidationErrors, asyn
     company: company || "",
     service,
     message,
-    receivedAt: new Date().toISOString(),
-    ip: req.ip
+    receivedAt: new Date().toISOString()
   };
 
   // Log only non-sensitive metadata in production-grade systems.
