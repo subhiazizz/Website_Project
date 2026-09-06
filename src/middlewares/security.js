@@ -17,8 +17,8 @@ function applySecurity(app, env) {
         directives: {
           defaultSrc: ["'self'"],
           scriptSrc: ["'self'"],
-          styleSrc: ["'self'", "https://fonts.googleapis.com"],
-          fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
+          styleSrc: ["'self'"],
+          fontSrc: ["'self'", "data:"],
           imgSrc: ["'self'", "data:", "https:"],
           connectSrc: ["'self'"],
           objectSrc: ["'none'"],
