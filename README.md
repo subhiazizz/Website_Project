@@ -122,3 +122,15 @@ Empfohlene naechste Schritte:
 - Kontakt-Route aktuell mit Platzhalter-Verarbeitung (Konsole)
 - Fuer Production: sichere DB-Anbindung oder E-Mail-Provider (z. B. Postmark, SendGrid) integrieren
 - Optional zusaetzlich: Captcha, WAF, SIEM-Logging
+
+## Deployment notes
+
+- `PUBLIC_URL` (added in the security pass) is the canonical origin the server
+  uses when it constructs URLs it hands to crawlers, caches, and CDNs
+  (`/robots.txt`, `/sitemap.xml`). Set it to the real https:// origin in
+  production so a crafted `Host:` header cannot poison those responses.
+- `TRUST_PROXY=true` is required whenever the process sits behind a reverse
+  proxy (nginx, Cloudflare, App Runner, Fly, Render, ...). Without it, Express
+  reads the socket peer address for `req.ip`, which is always the proxy for
+  every request, so rate limiting shares one bucket across all clients and
+  either lets everyone through or blocks everyone at once.
