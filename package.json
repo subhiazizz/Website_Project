@@ -2,6 +2,9 @@
   "name": "fullservice-marketing-agency-site",
   "version": "1.0.0",
   "description": "Secure full-stack website for a full-service marketing agency",
+  "engines": {
+    "node": ">=20"
+  },
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

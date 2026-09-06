@@ -17,20 +17,32 @@ function applySecurity(app, env) {
         directives: {
           defaultSrc: ["'self'"],
           scriptSrc: ["'self'"],
-          styleSrc: ["'self'", "https://fonts.googleapis.com"],
-          fontSrc: ["'self'", "https://fonts.gstatic.com", "data:"],
-          imgSrc: ["'self'", "data:", "https:"],
+          styleSrc: ["'self'"],
+          fontSrc: ["'self'", "data:"],
+          imgSrc: ["'self'", "data:", "https://images.unsplash.com"],
           connectSrc: ["'self'"],
           objectSrc: ["'none'"],
           frameAncestors: ["'none'"],
           baseUri: ["'self'"],
-          formAction: ["'self'"]
+          formAction: ["'self'"],
+          upgradeInsecureRequests: []
         }
       },
       crossOriginEmbedderPolicy: false,
       referrerPolicy: { policy: "strict-origin-when-cross-origin" }
     })
   );
+
+  // Permissions-Policy: default-deny for sensitive browser capabilities the
+  // site never uses. Helmet exposes this via a separate module; the header
+  // fits in one line here.
+  app.use((req, res, next) => {
+    res.setHeader(
+      "Permissions-Policy",
+      "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    );
+    next();
+  });
 
   app.use(
     cors({

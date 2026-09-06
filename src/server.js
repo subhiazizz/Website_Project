@@ -31,24 +31,21 @@ app.use("/api/health", healthRoutes);
 app.use("/api/contact", contactRoutes);
 
 app.get("/robots.txt", (req, res) => {
-  const protocol = req.secure ? "https" : "http";
-  const host = req.get("host");
-  const baseUrl = `${protocol}://${host}`;
-
+  // baseUrl comes from PUBLIC_URL, not req.get("host"), so a crafted Host
+  // header cannot poison the advertised sitemap location.
   res.type("text/plain");
-  res.send(`User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`);
+  res.send(`User-agent: *\nAllow: /\n\nSitemap: ${env.publicUrl}/sitemap.xml\n`);
 });
 
 app.get("/sitemap.xml", (req, res) => {
-  const protocol = req.secure ? "https" : "http";
-  const host = req.get("host");
-  const baseUrl = `${protocol}://${host}`;
+  // Same rationale as /robots.txt above: never trust req.get("host") in
+  // response bodies that get cached or crawled.
   const currentDate = new Date().toISOString().split("T")[0];
 
   const urlEntries = seoPages
     .map(
       (route) =>
-        `<url><loc>${baseUrl}${route}</loc><changefreq>weekly</changefreq><priority>${
+        `<url><loc>${env.publicUrl}${route}</loc><changefreq>weekly</changefreq><priority>${
           route === "/" ? "1.0" : "0.8"
         }</priority><lastmod>${currentDate}</lastmod></url>`
     )
